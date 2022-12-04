@@ -1,0 +1,1 @@
+build:nix --crosstool_top=@nixpkgs_config_cc//:toolchain
