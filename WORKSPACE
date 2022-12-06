@@ -33,59 +33,6 @@ nixpkgs_cc_configure(
 
 load("@io_tweag_rules_nixpkgs//nixpkgs:nixpkgs.bzl", "nixpkgs_package")
 
-
-nixpkgs_package(
-    name = "boost",
-    attribute_path = "boost175",
-    repository = "@nixpkgs",
-)
-
-nixpkgs_package(
-    name = "boost.dev",
-    attribute_path = "boost175.dev",
-    build_file_content = """\
-load("@rules_cc//cc:defs.bzl", "cc_library")
-filegroup(
-    name = "include",
-    srcs = glob(["include/**/*.h", "include/**/*.hpp"]),
-    visibility = ["//visibility:public"],
-)
-cc_library(
-    name = "boost",
-    srcs = ["@boost//:lib"],
-    hdrs = [":include"],
-    strip_include_prefix = "include",
-    visibility = ["//visibility:public"],
-)
-""",
-    repository = "@nixpkgs",
-)
-
-nixpkgs_package(
-    name = "zlib",
-    repository = "@nixpkgs",
-)
-
-nixpkgs_package(
-    name = "zlib.dev",
-    build_file_content = """\
-load("@rules_cc//cc:defs.bzl", "cc_library")
-filegroup(
-    name = "include",
-    srcs = glob(["include/**/*.h"]),
-    visibility = ["//visibility:public"],
-)
-cc_library(
-    name = "zlib",
-    srcs = ["@zlib//:lib"],
-    hdrs = [":include"],
-    strip_include_prefix = "include",
-    visibility = ["//visibility:public"],
-)
-""",
-    repository = "@nixpkgs",
-)
-
 opencv_nix_file="""
 { pkgs ? import <nixpkgs> {} }:
 let

@@ -4,8 +4,6 @@ cc_binary(
     name = "review",
     srcs = ["main.cc"],
     deps = [
-        "@boost.dev//:boost",
-        "@zlib.dev//:zlib",
         "@opencvGtk//:opencv",
     ],
 )

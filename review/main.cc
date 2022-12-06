@@ -10,7 +10,7 @@ using namespace std;
 int main(int argc, char** argv)
 {
  // Read the image file
- Mat image = imread("/home/murt/Pictures/Selection_001.png");
+ Mat image = imread("/home/murt/Downloads/vscode-default-dark-theme-1024x666.png");
 
  // Check for failure
  if (image.empty()) 
