@@ -86,12 +86,6 @@ cc_library(
     repository = "@nixpkgs",
 )
 
-
-# nixpkgs_package(
-#     name = "opencv",
-#     repository = "@nixpkgs",
-# )
-
 opencv_nix_file="""
 { pkgs ? import <nixpkgs> {} }:
 let
