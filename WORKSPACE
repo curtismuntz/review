@@ -62,6 +62,7 @@ filegroup(
 )
 cc_library(
     name = "opencv",
+    linkstatic=1,
     srcs = [":libs"],
     hdrs = [":include"],
     strip_include_prefix = "include/opencv4",

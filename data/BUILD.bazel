@@ -1,0 +1,5 @@
+filegroup(
+    name = "images",
+    srcs = ["murt_professional.jpg"],
+    visibility = ["//visibility:public",],
+)
