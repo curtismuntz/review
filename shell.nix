@@ -2,5 +2,5 @@
 
 with pkgs;
 mkShell {
-  packages = [ bazel_5 buildifier buildozer nix ];
+  packages = [ bazel_6 buildifier buildozer nix ];
 }
