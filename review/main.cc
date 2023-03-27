@@ -1,6 +1,8 @@
 #include <fstream>
 #include <opencv2/opencv.hpp>
 
+// Example yolo app taken from
+// https://medium.com/mlearning-ai/detecting-objects-with-yolov5-opencv-python-and-c-c7cf13d1483c
 std::vector<std::string> load_class_list() {
   std::vector<std::string> class_list;
   std::ifstream ifs("config_files/classes.txt");

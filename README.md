@@ -1,4 +1,8 @@
-# demo for compiling super complex third party stuff with help from nix
+# Review
+
+An opencv post process to run against Amcrest NFS outputs.
+
+I have amcrest cameras that produce motion events on my NFS in very unreasonable formats. This application is meant to be run against a NFS directory that takes all motion events across all cameras and creates a full video of the events in a linear time format. The post process runs an object detection YOLO v5 algorithm and will create bounding boxes around motion events. In the event that an entire sequence does not have a detection, it is flagged as a false positive and will not be included in the summary output.
 
 ## setup
 
@@ -22,4 +26,10 @@ git clone git@github.com:curtismuntz/review
 
 ```
 cd review && direnv allow .
+```
+
+## building / running
+
+```
+bazel run //review
 ```
